@@ -92,3 +92,21 @@ document.getElementById('macbook-plus').addEventListener('click', function () {
 document.getElementById('macbook-minus').addEventListener('click', function () {
     upadateCaseNumber('macbook', 999, false);
 });
+
+document.getElementById('check-out').addEventListener('click', function () {
+    // Reset semua input jumlah ke 0
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.value = 0;
+    });
+
+    // Reset subtotal, tax, dan total
+    document.getElementById('sub-total').innerText = 0;
+    document.getElementById('tax-amount').innerText = 0;
+    document.getElementById('total-price').innerText = 0;
+
+    // Tampilkan alert
+    alert('Selamat, produk sudah terbeli!');
+
+    // Optional: Reload halaman jika ingin mereset sepenuhnya
+    // location.reload();
+});
