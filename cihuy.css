@@ -1,0 +1,487 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Menyembunyikan modal secara default */
+.modal {
+  display: none; /* Secara default modal tersembunyi */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Styling konten dalam modal */
+.modal-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Tombol untuk menutup modal */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Styling header dan teks di dalam modal */
+.modal-content h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f85a4f;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f46a4b;
+}
+
+/* Modal Search - tampilkan di atas, menutupi header */
+.search-modal {
+  display: none; /* Modal search tersembunyi secara default */
+  position: fixed;
+  top: 0; /* Posisi modal di atas */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Modal menutupi seluruh layar */
+  background-color: rgba(0, 0, 0, 0.7); /* Latar belakang transparan */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Modal berada di atas header dan konten lainnya */
+  transition: all 0.3s ease-in-out; /* Transisi halus */
+}
+
+/* Konten di dalam modal pencarian */
+.search-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px; /* Maksimal lebar modal */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol untuk menutup modal pencarian */
+.close-btn {
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Styling input pencarian */
+#search-input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#search-btn {
+  background-color: #f85a4f;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#search-btn i {
+  font-size: 18px;
+}
+
+#search-btn:hover {
+  background-color: #f46a4b;
+}
+
+/* Menambahkan animasi untuk efek muncul */
+.search-modal.show {
+  display: flex;
+  transform: translateY(0); /* Modal muncul dari atas */
+}
+  
+  header {
+    position: fixed; /* Tetap di atas layar */
+    top: 0;
+    left: 0;
+    width: 100%; /* Pastikan header selebar layar */
+    z-index: 1000;
+    background-color: #fff; /* Latar belakang putih */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk memisahkan dengan konten */
+    padding: 20px 50px; /* Spasi dalam header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+  }
+  
+  /* Spasi untuk menghindari header menutupi konten utama */
+  main {
+    margin-top: 80px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    font-size: 24px;
+    color: black; /* Menjadikan warna ikon hitam */
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    color: #f85a4f; /* Warna saat hover */
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Styling for Hero section */
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+    position: relative;
+  }
+  
+  .text-content {
+    max-width: 50%;
+  }
+  
+  .text-content h1 {
+    font-size: 48px;
+    color: #333;
+  }
+  
+  .text-content .highlight {
+    color: red;
+  }
+  
+  .text-content .sub-title {
+    font-size: 24px;
+    color: #666;
+    margin: 10px 0;
+  }
+  
+  .text-content p {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  #learn-more {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  #learn-more:hover {
+    background-color: #333;
+  }
+  
+  .image-content img {
+    width: 400px;
+    border-radius: 10px;
+  }
+  
+  /* Styling for product categories */
+  .categories {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .categories-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Membuat 5 kolom */
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  .category {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .category img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .category h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333;
+  }
+
+  /* Halaman 3: Full Gambar dan Teks di Samping */
+.page3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #f9f9f9;
+}
+
+.text-content {
+  max-width: 50%;
+  padding-right: 50px;
+}
+
+.text-content h1 {
+  font-size: 48px;
+  color: #333;
+}
+
+.text-content p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+/* Halaman Bantuan dan Dukungan */
+.page4 {
+  padding: 50px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Kontainer untuk Bantuan dan Gambar */
+.help-container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.text-content {
+  margin-bottom: 30px;
+}
+
+.text-content h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Kontainer untuk Gambar Kiri dan Kanan */
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.image-left img,
+.image-right img {
+  width: 100%;
+  max-width: 500px; /* Ukuran gambar yang seragam */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Black Box untuk Logo Produk dan Media Sosial */
+.black-box {
+  background-color: #000;
+  color: white;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.black-box .logo-product img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.social-media {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #f85a4f;
+}
+
+.decorations {
+  display: flex;
+  gap: 15px;
+}
+
+.decor-icon {
+  font-size: 24px;
+  color: white;
+}
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column; /* Gambar berjejer vertikal di layar kecil */
+    align-items: center;
+  }
+
+  .image-left img,
+  .image-right img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text-content h2 {
+    font-size: 28px;
+  }
+
+  .text-content p {
+    font-size: 16px;
+  }
+
+  .black-box {
+    padding: 30px;
+  }
+}
+  
+  /* Responsif untuk tampilan mobile */
+  @media (max-width: 768px) {
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar kecil */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .categories-grid {
+      grid-template-columns: 1fr; /* 1 kolom pada layar yang lebih kecil */
+    }
+  }
+  @media (max-width: 768px) {
+    .page3 {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .text-content {
+      max-width: 100%;
+      padding-right: 0;
+    }
+  
+    .image-content img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .help-container {
+      flex-direction: column; /* Gambar dan teks berjejer vertikal di layar kecil */
+      text-align: center;
+    }
+  
+    .image-left img,
+    .image-right img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .text-content h2 {
+      font-size: 28px;
+    }
+  
+    .text-content p {
+      font-size: 16px;
+    }
+  
+    .black-box {
+      padding: 20px;
+    }
+  }
+  
