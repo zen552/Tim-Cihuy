@@ -1,43 +1,37 @@
-function upadateCaseNumber(product, price, isIncreasing){
-    const caseInput = document.getElementById(product + '-number');
-    let caseNumber = caseInput.value;
-            if(isIncreasing){
-                caseNumber = parseInt(caseNumber) + 1;
-            }
-            
-    else if(caseNumber > 0){
-           caseNumber = parseInt(caseNumber) - 1;
-         }
-        
-        caseInput.value = caseNumber;
-    // update case total 
-    const caseTotal = document.getElementById(product + '-total');
-    caseTotal.innerText = caseNumber * price;
+// Update currency to Rupiah in JavaScript
+function formatToRupiah(value) {
+    return `Rp ${value.toLocaleString('id-ID')}`;
+}
+
+function upadateCaseNumber(product, price, isIncreasing) {
+    const caseInput = document.getElementById(`${product}-number`);
+    let caseNumber = parseInt(caseInput.value);
+    caseNumber = isIncreasing ? caseNumber + 1 : Math.max(caseNumber - 1, 0);
+    caseInput.value = caseNumber;
+
+    // Update case total
+    const caseTotal = document.getElementById(`${product}-total`);
+    caseTotal.innerText = formatToRupiah(caseNumber * price);
+
     calculateTotal();
-    }
+}
 
+function calculateTotal() {
+    const phoneTotal = getInputvalue('phone') * 2529000;
+    const caseTotal = getInputvalue('case') * 59 * 15250; // Konversi ke Rp
+    const ipadTotal = getInputvalue('ipad') * 500000;
+    const watchTotal = getInputvalue('watch') * 279 * 15250; // Konversi ke Rp
+    const macbookTotal = getInputvalue('macbook') * 999 * 15250; // Konversi ke Rp
+    const subTotal = phoneTotal + caseTotal + ipadTotal + watchTotal + macbookTotal;
+    const tax = Math.round(subTotal / 10);
+    const totalPrice = subTotal + tax;
 
-    function getInputvalue(product){
-        const productInput = document.getElementById(product + '-number');
-        const productNumber = parseInt(productInput.value);
-        return productNumber;
-    }
-    function calculateTotal(){
-        const phoneTotal = getInputvalue('phone') * 1219;
-        const caseTotal = getInputvalue('case') * 59;
-        const ipadTotal = getInputvalue('ipad') * 599;
-        const watchTotal = getInputvalue('watch') * 279;
-        const macbookTotal = getInputvalue('macbook') * 999;
-        const subTotal = phoneTotal + caseTotal + ipadTotal + watchTotal + macbookTotal;
-        const tax = subTotal / 10;
-        const totalPrice = subTotal + tax;
+    // Update HTML
+    document.getElementById('sub-total').innerText = formatToRupiah(subTotal);
+    document.getElementById('tax-amount').innerText = formatToRupiah(tax);
+    document.getElementById('total-price').innerText = formatToRupiah(totalPrice);
+}
 
-        // update on the html 
-        document.getElementById('sub-total').innerText = subTotal;
-        document.getElementById('tax-amount').innerText = tax;
-        document.getElementById('total-price').innerText = totalPrice;
-
-    }
 
 
 document.getElementById('case-plus').addEventListener('click',function(){
