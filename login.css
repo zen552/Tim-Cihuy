@@ -1,4 +1,5 @@
 /* Reset some default styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,40 +12,42 @@
   }
   
   /* Header */
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-  }
-  
-  nav ul li a {
-    font-size: 24px;
-    color: black;
-    text-decoration: none;
-  }
-  
-  nav ul li a:hover {
-    color: #f85a4f;
-  }
+  /* Header */
+header {
+  position: fixed; /* Tetap di atas layar */
+  top: 0;
+  left: 0;
+  width: 100%; /* Lebar penuh */
+  background-color: #fff; /* Warna latar putih */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan bawah */
+  padding: 20px 50px; /* Ruang dalam */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* Jarak antar menu */
+}
+
+nav ul li a {
+  font-size: 24px;
+  color: black; /* Warna teks hitam */
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #f85a4f; /* Warna hover */
+}
+
   
   /* Main content */
   main {
@@ -53,20 +56,70 @@
   
   .login-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Penuhi tinggi viewport */
+    overflow: hidden; /* Hilangkan scroll */
+  }
+  
+  .image-box {
+    flex: 1;
+    height: 100vh; /* Tinggi penuh layar */
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Gambar menutupi area tanpa scroll */
   }
   
   .login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+    padding: 40px;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   }
+  
+  /* Copyright di Bagian Bawah */
+  .footer {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    padding: 10px 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+.back-button {
+  margin-top: 15px; /* Jarak antara tombol login dan tombol back */
+  text-align: center;
+  width: 100%;
+}
+
+.btn-back {
+  display: inline-block;
+  width: 48%;
+  padding: 10px 20px;
+  background-color: #ddd; /* Warna latar tombol */
+  color: #333; /* Warna teks */
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #bbb; /* Warna latar saat hover */
+}
   
   h2 {
     font-size: 32px;
@@ -160,12 +213,17 @@
     background-color: #f46a4b;
   }
   
-  /* Responsive */
-  @media (max-width: 768px) {
-    .login-container {
-      width: 100%;
-      max-width: 300px;
-      padding: 20px;
-    }
+  /* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .login-section {
+    flex-direction: column; /* Tumpuk kolom di layar kecil */
   }
+
+  .image-box,
+  .login-container {
+    flex: none;
+    width: 100%;
+    height: 50%; /* Masing-masing setengah tinggi layar */
+  }
+}
   

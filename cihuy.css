@@ -1,4 +1,5 @@
 /* Reset some default styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -282,120 +283,101 @@ button:hover {
     font-size: 16px; /* Ukuran teks */
     color: #333; /* Warna teks */
   }
-  
+
   /* Halaman 3: Full Gambar dan Teks di Samping */
+/* Page 3 - Fullscreen Gambar dengan Overlay Teks */
 .page3 {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px;
-  background-color: #f9f9f9;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.text-content {
-  max-width: 50%;
-  padding-right: 50px;
-}
-
-.text-content h1 {
-  font-size: 48px;
-  color: #333;
-}
-
-.text-content p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.6;
-}
-
-.image-content img {
+.page3 .image-content img {
   width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
 }
 
-
-/* Halaman Bantuan dan Dukungan */
-.page4 {
-  padding: 50px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Overlay Teks dan Tombol */
+.page3 .text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #000; /* Warna teks hitam */
+  text-align: left;
 }
 
-/* Kontainer untuk Bantuan dan Gambar */
-.help-container {
-  width: 100%;
-  max-width: 1200px;
-  text-align: center;
-}
-
-.text-content {
-  margin-bottom: 30px;
-}
-
-.text-content h2 {
-  font-size: 32px;
-  color: #333;
+.page3 .text-overlay h1 {
+  font-size: 3rem; /* Ukuran judul besar */
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
-.text-content p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.6;
+.page3 .text-overlay .highlight {
+  color: #333; /* Warna teks tambahan */
+  font-weight: bold;
 }
 
-/* Kontainer untuk Gambar Kiri dan Kanan */
-.image-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
+/* Tombol Buy Now */
+.btn-buy {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000; /* Warna latar tombol */
+  color: #fff; /* Warna teks tombol */
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 25px;
+  font-weight: bold;
 }
 
-.image-left img,
-.image-right img {
-  width: 100%;
-  max-width: 500px; /* Ukuran gambar yang seragam */
-  height: auto;
-  border-radius: 10px;
+.btn-buy:hover {
+  background-color: #444; /* Warna saat hover */
+}
+
+
+/* Page 4 - Fullscreen Gambar */
+.page4 {
+  position: relative;
+  width: 100vw; /* Lebar penuh layar */
+  height: 100vh; /* Tinggi penuh layar */
+  overflow: hidden; /* Sembunyikan bagian gambar yang kelebihan */
+  margin: 0; /* Hapus margin */
+  padding: 0; /* Hapus padding */
+}
+
+.page4 .image-content img {
+  width: 100%; /* Lebar penuh */
+  height: 100%; /* Tinggi penuh */
+  object-fit: cover; /* Pastikan gambar proporsional dan memenuhi area */
 }
 
 /* Black Box untuk Logo Produk dan Media Sosial */
 .black-box {
-  background-color: #000;
-  color: white;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 1200px;
-  text-align: center;
-  margin-top: 40px;
+  padding: 15px 50px; /* Kurangi padding atas dan bawah */
+  background-color: #000; /* Latar belakang hitam */
+  text-align: center; /* Pusatkan teks */
+  margin-top: 20px;
+  margin: 0; /* Hilangkan margin */
+  padding: 20px 50px; /* Atur padding sesuai kebutuhan */
+  border-radius: 0; /* Pastikan kotak biasa */
 }
 
-.black-box .logo-product img {
-  max-width: 150px;
-  margin-bottom: 20px;
-}
-
-.social-media {
+.black-box .social-media {
   display: flex;
-  justify-content: center; /* Memusatkan ikon sosial media */
-  gap: 20px;
-  margin-top: 20px; /* Memberikan jarak antara "Contact Us" dan ikon sosial media */
+  justify-content: center; /* Ikon di tengah */
+  gap: 15px; /* Jarak antar ikon */
 }
 
 .social-icon {
-  font-size: 30px;
-  color: white;
+  font-size: 24px; /* Ukuran ikon */
+  color: white; /* Warna ikon */
   text-decoration: none;
 }
 
 .social-icon:hover {
-  color: #f85a4f;
+  color: #f85a4f; /* Warna hover */
 }
 
 /* Menambahkan gaya untuk logo WhatsApp */
