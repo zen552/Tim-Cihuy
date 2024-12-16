@@ -16,41 +16,49 @@ function upadateCaseNumber(product, price, isIncreasing) {
     calculateTotal();
 }
 
+function getInputvalue(product){
+    const productInput = document.getElementById(product + '-number');
+    const productNumber = parseInt(productInput.value);
+    return productNumber;
+}
+
+
 function calculateTotal() {
     const phoneTotal = getInputvalue('phone') * 2529000;
-    const caseTotal = getInputvalue('case') * 500000; // Konversi ke Rp
-    const ipadTotal = getInputvalue('ipad') * 500000;
-    const watchTotal = getInputvalue('watch') * 500000; // Konversi ke Rp
-    const macbookTotal = getInputvalue('macbook') * 999 * 500000; // Konversi ke Rp
-    const subTotal = phoneTotal + caseTotal + ipadTotal + watchTotal + macbookTotal;
+    const headsetTotal = getInputvalue('headset') * 500000; 
+    const foneTotal = getInputvalue('ambafone') * 14000000;
+    const laptopTotal = getInputvalue('ambatop') * 5000000; 
+    const watchTotal = getInputvalue('watch') * 600000; 
+    const tabTotal = getInputvalue('ambatab') * 3000000; 
+    const subTotal = phoneTotal + headsetTotal + foneTotal + laptopTotal + watchTotal + tabTotal;
     const tax = Math.round(subTotal / 10);
     const totalPrice = subTotal + tax;
 
     // Update HTML
-    document.getElementById('sub-total').innerText = formatToRupiah(subTotal);
-    document.getElementById('tax-amount').innerText = formatToRupiah(tax);
-    document.getElementById('total-price').innerText = formatToRupiah(totalPrice);
+    document.getElementById('sub-total').innerText = subTotal;
+    document.getElementById('tax-amount').innerText = tax;
+    document.getElementById('total-price').innerText = totalPrice;
 }
 
 
 
-document.getElementById('case-plus').addEventListener('click',function(){
+document.getElementById('headset-plus').addEventListener('click',function(){
         // const caseInput = document.getElementById('case-number');
         // const caseNumber = caseInput.value;
         // caseInput.value = parseInt(caseNumber) + 1;
-   upadateCaseNumber('case', 500000 ,true);
+   upadateCaseNumber('headset', 500000 ,true);
 });
 
-document.getElementById('case-minus').addEventListener('click',function(){
+document.getElementById('headset-minus').addEventListener('click',function(){
     // const caseInput = document.getElementById('case-number');
 //     const caseNumber = caseInput.value;
 //    if(caseInput.value > 1){
 //         caseInput.value = parseInt(caseNumber) - 1;
 //    }
-upadateCaseNumber('case', 500000, false);
+    upadateCaseNumber('headset', 500000, false);
 });
 
-// phone prcie update using add event linstner 
+// phone price update using add event linstner 
 document.getElementById('phone-plus').addEventListener('click',function(){
     upadateCaseNumber('phone',2529000, true);
 });
@@ -61,30 +69,39 @@ document.getElementById('phone-minus').addEventListener('click',function(){
 });
 
 // Event listeners for iPad
-document.getElementById('ipad-plus').addEventListener('click', function () {
-    upadateCaseNumber('ipad', 500000, true);
+document.getElementById('ambafone-plus').addEventListener('click', function () {
+    upadateCaseNumber('ambafone', 14000000, true);
 });
 
-document.getElementById('ipad-minus').addEventListener('click', function () {
-    upadateCaseNumber('ipad', 500000, false);
+document.getElementById('ambafone-minus').addEventListener('click', function () {
+    upadateCaseNumber('ambafone', 14000000, false);
 });
 
 // Event listeners for Apple Watch
-document.getElementById('watch-plus').addEventListener('click', function () {
-    upadateCaseNumber('watch', 500000, true);
+document.getElementById('ambatop-plus').addEventListener('click', function () {
+    upadateCaseNumber('ambatop', 5000000, true);
 });
 
-document.getElementById('watch-minus').addEventListener('click', function () {
-    upadateCaseNumber('watch', 500000, false);
+document.getElementById('ambatop-minus').addEventListener('click', function () {
+    upadateCaseNumber('ambatop', 5000000, false);
 });
 
 // Event listeners for MacBook
-document.getElementById('macbook-plus').addEventListener('click', function () {
-    upadateCaseNumber('macbook', 500000, true);
+document.getElementById('watch-plus').addEventListener('click', function () {
+    upadateCaseNumber('watch', 600000, true);
 });
 
-document.getElementById('macbook-minus').addEventListener('click', function () {
-    upadateCaseNumber('macbook', 500000, false);
+document.getElementById('watch-minus').addEventListener('click', function () {
+    upadateCaseNumber('watch', 600000, false);
+});
+
+// Event listeners for MacBook
+document.getElementById('ambatab-plus').addEventListener('click', function () {
+    upadateCaseNumber('ambatab', 3000000, true);
+});
+
+document.getElementById('ambatab-minus').addEventListener('click', function () {
+    upadateCaseNumber('ambatab', 3000000, false);
 });
 
 document.getElementById('check-out').addEventListener('click', function () {
