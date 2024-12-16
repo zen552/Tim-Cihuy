@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Infinix</title>
   <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">Infinix</div>
+    <div class="logo">AmbaFone</div>
     <nav>
       <ul>
         <li><a href="login.html" id="profile-icon"><i class="fas fa-user"></i></a></li>
@@ -23,8 +24,14 @@
   <!-- Main Content for Login -->
   <main>
     <section class="login-section">
+      <!-- Gambar di Sebelah Kiri -->
+      <div class="image-box">
+        <img src="people.jpg" alt="Welcome Image">
+      </div>
+  
+      <!-- Form Login di Sebelah Kanan -->
       <div class="login-container">
-        <h2>Login to Your Account</h2>
+        <h2>Welcome!</h2>
         <form id="login-form">
           <div class="form-group">
             <label for="email">Email</label>
@@ -36,10 +43,19 @@
           </div>
           <button type="submit" id="login-btn">Login</button>
         </form>
+        <!-- Tombol Back -->
+        <div class="back-button">
+          <a href="cihuy.html" class="btn-back">Back to Home</a>
+        </div>
+        <!-- Footer Copyright -->
+        <footer class="footer">
+          <p>AmbaFone &copy; 2024</p>
+        </footer>
       </div>
     </section>
   </main>
 
+  
   <!-- Modal Search -->
   <div id="search-modal" class="search-modal">
     <div class="search-modal-content">
