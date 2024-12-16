@@ -19,11 +19,12 @@ header {
     justify-content: space-between;
     align-items: center;
     top: 0;
+    border-radius: 30px;
 }
   
 /* Spasi untuk menghindari header menutupi konten utama */
 section {
-    margin-top: 80px;
+    margin-top: 100px;
 }
   
 nav ul {
@@ -46,13 +47,15 @@ nav ul li a:hover {
     font-size: 24px;
     font-weight: bold;
 	text-decoration: none;
-	color: black	;
+	color: black;
 }
 
 .cart{
 	margin: 20px 0;
-	background-color: #F6F5FA;;
+	background-color: black;
 	padding: 60px 0;
+    border: none;
+    border-radius: 20px;
 }
 .total-price{
 	padding-bottom: 15px;
