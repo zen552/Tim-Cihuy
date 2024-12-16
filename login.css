@@ -12,7 +12,6 @@
   }
   
   /* Header */
-  /* Header */
 header {
   position: fixed; /* Tetap di atas layar */
   top: 0;
@@ -25,7 +24,6 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  border-radius: 0 0 30px 30px;
 }
 
 .logo, a {
@@ -109,7 +107,7 @@ nav ul li a:hover {
 
 .btn-back {
   display: inline-block;
-  width: 48%;
+  width: 47%;
   padding: 10px 20px;
   background-color: #ddd; /* Warna latar tombol */
   color: #333; /* Warna teks */
@@ -226,7 +224,70 @@ nav ul li a:hover {
   .login-container {
     flex: none;
     width: 100%;
-    height: 50%; /* Masing-masing setengah tinggi layar */
+    height: 50%; /* Masing-masing setengah tinggi layar */s
   }
 }
+
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    padding: 10px 20px; /* Padding lebih kecil di mobile */
+  }
+
+  /* Main Content */
+  main {
+    margin-top: 60px; /* Kurangi margin agar konten naik */
+  }
+
+  .login-container {
+    padding: 20px; /* Kurangi padding agar lebih proporsional */
+    box-shadow: none; /* Hilangkan shadow di mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Ukuran judul lebih kecil */
+    margin-bottom: 15px;
+    text-align: center; /* Pusatkan judul */
+  }
+
+  .form-group {
+    margin-bottom: 15px; /* Kurangi jarak antar input */
+  }
+
+  .form-group input {
+    padding: 8px; /* Input lebih kompak */
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px; /* Tombol lebih proporsional */
+    font-size: 14px;
+  }
+
+  /* Tombol Back to Home */
+  .back-button {
+    margin-top: 10px; /* Kurangi jarak atas */
+  }
+
+  .btn-back {
+    width: 71%; /* Lebar penuh */
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 12px;
+    padding: 5px 0; /* Padding lebih kecil */
+    position: relative; /* Agar footer tidak fixed */
+    margin-top: 20px; /* Berikan jarak ke bawah */
+  }
+
+  /* Gambar di Atas */
+  .image-box img {
+    height: auto; /* Tinggi gambar mengikuti aspek */
+  }
+}
+
+
   

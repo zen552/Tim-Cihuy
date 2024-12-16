@@ -20,7 +20,6 @@ header {
     justify-content: space-between;
     align-items: center;
     top: 0;
-    border-radius: 0 0 30px 30px;
 }
   
 /* Spasi untuk menghindari header menutupi konten utama */
@@ -109,4 +108,80 @@ nav ul li a:hover {
 .btn-secondary {
 	padding: 10px 30px;
 	font-size: 19px;
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 10px 20px; /* Lebih kecil di mobile */
+    }
+
+    /* Container utama */
+    .cart {
+        padding: 20px 10px; /* Padding lebih kecil */
+        margin: 0; /* Hilangkan margin */
+        border-radius: 0; /* Hilangkan radius di mobile */
+    }
+
+    /* Cart item */
+    .cart-item {
+        flex-direction: column; /* Item bertumpuk vertikal */
+        padding: 10px;
+    }
+
+    .center-item {
+        flex-direction: column; /* Gambar dan teks bertumpuk */
+        text-align: center;
+    }
+
+    .cart-item img {
+        width: 80px; /* Ukuran gambar diperkecil */
+        margin-bottom: 10px; /* Jarak ke teks */
+    }
+
+    .cart-item h5 {
+        padding: 5px 0;
+        font-size: 14px; /* Ukuran teks lebih kecil */
+    }
+
+    /* Input jumlah item */
+    .input-group {
+        justify-content: center; /* Pusatkan input */
+        margin-top: 10px;
+    }
+
+    .form-control {
+        width: 50px; /* Input lebih kecil */
+        font-size: 16px;
+    }
+
+    /* Subtotal dan total */
+    .cart-item .status h5 {
+        font-size: 14px; /* Ukuran teks lebih kecil */
+    }
+
+    .cart-item .status {
+        text-align: center; /* Tengah di mobile */
+        margin-top: 10px;
+    }
+
+    /* Tombol Back dan Check Out */
+    .btn-secondary, .check-out {
+        width: 48%; /* Lebar tombol sama */
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .col-md-12.d-flex {
+        flex-direction: column; /* Tombol vertikal di layar sempit */
+        gap: 10px; /* Jarak antar tombol */
+        align-items: center;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 12px;
+        text-align: center;
+        padding: 10px;
+    }
 }
