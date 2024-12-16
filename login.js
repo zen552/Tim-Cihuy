@@ -6,7 +6,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     window.location.href = 'cihuy.html'; // Pengalihan ke halaman utama tanpa validasi
   });
   
-  // Menangani modal pencarian
+  // Menangani modal pencarianku
   const searchModal = document.getElementById('search-modal');
   const closeSearchModal = document.getElementById('close-search-modal');
   const searchIcon = document.getElementById('search-icon');
