@@ -1,6 +1,6 @@
 // Update currency to Rupiah in JavaScript
 function formatToRupiah(value) {
-    return `Rp ${value.toLocaleString('id-ID')}`;
+    return ` ${value.toLocaleString('id-ID')}`;
 }
 
 function upadateCaseNumber(product, price, isIncreasing) {
@@ -18,10 +18,10 @@ function upadateCaseNumber(product, price, isIncreasing) {
 
 function calculateTotal() {
     const phoneTotal = getInputvalue('phone') * 2529000;
-    const caseTotal = getInputvalue('case') * 59 * 15250; // Konversi ke Rp
+    const caseTotal = getInputvalue('case') * 500000; // Konversi ke Rp
     const ipadTotal = getInputvalue('ipad') * 500000;
-    const watchTotal = getInputvalue('watch') * 279 * 15250; // Konversi ke Rp
-    const macbookTotal = getInputvalue('macbook') * 999 * 15250; // Konversi ke Rp
+    const watchTotal = getInputvalue('watch') * 500000; // Konversi ke Rp
+    const macbookTotal = getInputvalue('macbook') * 999 * 500000; // Konversi ke Rp
     const subTotal = phoneTotal + caseTotal + ipadTotal + watchTotal + macbookTotal;
     const tax = Math.round(subTotal / 10);
     const totalPrice = subTotal + tax;
@@ -38,7 +38,7 @@ document.getElementById('case-plus').addEventListener('click',function(){
         // const caseInput = document.getElementById('case-number');
         // const caseNumber = caseInput.value;
         // caseInput.value = parseInt(caseNumber) + 1;
-   upadateCaseNumber('case', 59 ,true);
+   upadateCaseNumber('case', 500000 ,true);
 });
 
 document.getElementById('case-minus').addEventListener('click',function(){
@@ -47,44 +47,44 @@ document.getElementById('case-minus').addEventListener('click',function(){
 //    if(caseInput.value > 1){
 //         caseInput.value = parseInt(caseNumber) - 1;
 //    }
-upadateCaseNumber('case', 59, false);
+upadateCaseNumber('case', 500000, false);
 });
 
 // phone prcie update using add event linstner 
 document.getElementById('phone-plus').addEventListener('click',function(){
-    upadateCaseNumber('phone',1219, true);
+    upadateCaseNumber('phone',2529000, true);
 });
 
 
 document.getElementById('phone-minus').addEventListener('click',function(){
-    upadateCaseNumber('phone',1219 , false);
+    upadateCaseNumber('phone',2529000, false);
 });
 
 // Event listeners for iPad
 document.getElementById('ipad-plus').addEventListener('click', function () {
-    upadateCaseNumber('ipad', 599, true);
+    upadateCaseNumber('ipad', 500000, true);
 });
 
 document.getElementById('ipad-minus').addEventListener('click', function () {
-    upadateCaseNumber('ipad', 599, false);
+    upadateCaseNumber('ipad', 500000, false);
 });
 
 // Event listeners for Apple Watch
 document.getElementById('watch-plus').addEventListener('click', function () {
-    upadateCaseNumber('watch', 279, true);
+    upadateCaseNumber('watch', 500000, true);
 });
 
 document.getElementById('watch-minus').addEventListener('click', function () {
-    upadateCaseNumber('watch', 279, false);
+    upadateCaseNumber('watch', 500000, false);
 });
 
 // Event listeners for MacBook
 document.getElementById('macbook-plus').addEventListener('click', function () {
-    upadateCaseNumber('macbook', 999, true);
+    upadateCaseNumber('macbook', 500000, true);
 });
 
 document.getElementById('macbook-minus').addEventListener('click', function () {
-    upadateCaseNumber('macbook', 999, false);
+    upadateCaseNumber('macbook', 500000, false);
 });
 
 document.getElementById('check-out').addEventListener('click', function () {
