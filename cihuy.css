@@ -255,10 +255,11 @@ button:hover {
   }
   
   .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Membuat 5 kolom */
-    gap: 30px;
-    justify-items: center;
+    display: flex;
+    justify-content: center; /* Memusatkan kategori secara horizontal */
+    flex-wrap: wrap; /* Membuat kategori rapi jika ada banyak item */
+    gap: 20px; /* Jarak antar kategori */
+    text-align: center; /* Memusatkan teks di bawah gambar */
   }
   
   .category {
@@ -270,17 +271,18 @@ button:hover {
   }
   
   .category img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    width: 150px; /* Atur lebar gambar */
+    height: 150px; /* Atur tinggi gambar */
+    object-fit: cover; /* Memastikan gambar proporsional */
+    border-radius: 10px; /* Opsional: sudut membulat */
   }
   
   .category h3 {
-    font-size: 18px;
-    margin-top: 10px;
-    color: #333;
+    margin-top: 10px; /* Jarak antara gambar dan teks */
+    font-size: 16px; /* Ukuran teks */
+    color: #333; /* Warna teks */
   }
-
+  
   /* Halaman 3: Full Gambar dan Teks di Samping */
 .page3 {
   display: flex;
@@ -381,8 +383,9 @@ button:hover {
 
 .social-media {
   display: flex;
+  justify-content: center; /* Memusatkan ikon sosial media */
   gap: 20px;
-  margin-bottom: 20px;
+  margin-top: 20px; /* Memberikan jarak antara "Contact Us" dan ikon sosial media */
 }
 
 .social-icon {
@@ -393,6 +396,24 @@ button:hover {
 
 .social-icon:hover {
   color: #f85a4f;
+}
+
+/* Menambahkan gaya untuk logo WhatsApp */
+.social-icon i.fa-whatsapp {
+  font-size: 30px;
+}
+
+/* Styling untuk teks "Contact Us" */
+.logo-product p {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #000; /* Latar belakang hitam agar lebih menonjol */
+  border-radius: 5px;
+  text-align: center; /* Memastikan teks Contact Us terpusat */
 }
 
 .decorations {
@@ -485,3 +506,16 @@ button:hover {
     }
   }
   
+  @media (max-width: 768px) {
+    .social-media {
+      justify-content: center; /* Menyusun ikon media sosial agar lebih rapat di layar kecil */
+    }
+  
+    .social-icon {
+      font-size: 26px; /* Menyesuaikan ukuran ikon di layar kecil */
+    }
+  
+    .logo-product p {
+      font-size: 20px; /* Menyesuaikan ukuran teks Contact Us di layar kecil */
+    }
+  }
