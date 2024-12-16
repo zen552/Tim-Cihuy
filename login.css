@@ -26,9 +26,11 @@ header {
   z-index: 1000;
 }
 
-.logo {
+.logo, a {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 
 nav ul {
