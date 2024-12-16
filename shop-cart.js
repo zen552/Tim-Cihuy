@@ -35,9 +35,9 @@ function calculateTotal() {
     const totalPrice = subTotal + tax;
 
     // Update HTML
-    document.getElementById('sub-total').innerText = subTotal;
-    document.getElementById('tax-amount').innerText = tax;
-    document.getElementById('total-price').innerText = totalPrice;
+    document.getElementById('sub-total').innerText = subTotal.toLocaleString('id-ID');
+    document.getElementById('tax-amount').innerText = tax.toLocaleString('id-ID');
+    document.getElementById('total-price').innerText = totalPrice.toLocaleString('id-ID');
 }
 
 
@@ -111,6 +111,12 @@ document.getElementById('check-out').addEventListener('click', function () {
     });
 
     // Reset subtotal, tax, dan total
+    document.getElementById('phone-total').innerText = 0;
+    document.getElementById('headset-total').innerText = 0;
+    document.getElementById('ambafone-total').innerText = 0;
+    document.getElementById('ambatop-total').innerText = 0;
+    document.getElementById('watch-total').innerText = 0;
+    document.getElementById('ambatab-total').innerText = 0;
     document.getElementById('sub-total').innerText = 0;
     document.getElementById('tax-amount').innerText = 0;
     document.getElementById('total-price').innerText = 0;
