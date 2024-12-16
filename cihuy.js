@@ -2,7 +2,7 @@ document.getElementById('learn-more').addEventListener('click', () => {
   alert('Terima kasih telah tertarik! Informasi lebih lanjut akan segera hadir.');
 });
 
-// Mendapatkan elemen modal, tombol close, dan tombol pencarian
+// Mendapatkan elemen modal, tombol close, dan tombol pencarianku
 const searchModal = document.getElementById('search-modal');
 const closeSearchModal = document.getElementById('close-search-modal');
 const searchIcon = document.getElementById('search-icon');
