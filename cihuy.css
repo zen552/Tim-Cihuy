@@ -162,7 +162,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     top: 0;
-    border-radius: 30px;
+    border-radius: 0 0 30px 30px;
   }
   
   /* Spasi untuk menghindari header menutupi konten utama */
