@@ -162,7 +162,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     top: 0;
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 0 0;
   }
   
   /* Spasi untuk menghindari header menutupi konten utama */
@@ -240,6 +240,7 @@ button:hover {
   }
   
   .image-content img {
+    display: flex;
     width: 600px;
     border-radius: 10px;
   }
@@ -411,6 +412,86 @@ button:hover {
   font-size: 24px;
   color: white;
 }
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Elemen ditata vertikal */
+        align-items: flex-start; /* Tetap kiri */
+        padding: 20px; /* Atur padding agar sesuai */
+    }
+
+    .text-content {
+        max-width: 100%; /* Lebar penuh */
+        text-align: left; /* Teks tetap di kiri */
+        margin-top: 20px; /* Jarak dari gambar ke teks */
+        order: 2; /* Teks setelah gambar */
+    }
+
+    .image-content {
+        order: 1; /* Gambar tampil duluan */
+        width: 100%; /* Lebar penuh */
+        margin-bottom: 10px;
+    }
+
+    .image-content img {
+        width: 100%; /* Gambar menyesuaikan lebar layar */
+        max-width: 300px; /* Maksimum lebar gambar */
+        margin: 0 auto; /* Di tengah horizontal */
+    }
+
+    #learn-more {
+        margin-top: 15px; /* Tambah jarak ke teks */
+        padding: 10px 20px;
+        width: fit-content; /* Tombol sesuai ukuran konten */
+    }
+}
+
+@media (max-width: 768px) {
+  .page3 {
+      position: relative;
+      width: 100%;
+      height: auto; /* Gambar hanya mengikuti proporsi aslinya */
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+  }
+
+  .page3 .image-content img {
+      width: 100%; /* Gambar selebar layar */
+      height: auto; /* Proporsi gambar tetap terjaga */
+      object-fit: cover;
+  }
+
+  .page3 .text-overlay {
+      position: absolute;
+      top: 40%; /* Teks di tengah relatif gambar */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white; /* Warna teks kontras */
+      text-align: center;
+      padding: 10px;
+      width: 90%; /* Maksimal lebar teks */
+  }
+
+  .page3 .text-overlay h1 {
+      font-size: 1.3rem; /* Ukuran teks lebih kecil */
+      margin-bottom: 10px;
+  }
+
+  .page3 .btn-buy {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 5px;
+  }
+
+  .page3 .btn-buy:hover {
+      background-color: #444;
+  }
+}
+
 
 /* Responsif untuk tampilan mobile */
 @media (max-width: 768px) {
@@ -466,6 +547,53 @@ button:hover {
       max-width: 100%;
     }
   }
+
+  @media (max-width: 768px) {
+    /* Page 4: Gambar tidak fullscreen */
+    .page4 {
+        position: relative;
+        width: 100%;
+        height: auto; /* Tinggi menyesuaikan */
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .page4 .image-content img {
+        width: 100%; /* Gambar penuh lebar */
+        height: auto; /* Proporsi tetap */
+        object-fit: cover;
+    }
+
+    /* Black Box: Hilangkan padding berlebihan */
+    .black-box {
+        margin: 0;
+        padding: 15px; /* Padding lebih kecil di mobile */
+        background-color: #000;
+        text-align: center;
+    }
+
+    .black-box .logo-product p {
+        font-size: 1.2rem; /* Ukuran teks lebih kecil */
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    .black-box .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Jarak antar ikon */
+    }
+
+    .social-icon {
+        font-size: 20px; /* Ukuran ikon lebih kecil */
+        color: white;
+    }
+
+    .social-icon:hover {
+        color: #f85a4f; /* Warna saat hover */
+    }
+}
 
   @media (max-width: 768px) {
     .help-container {
